@@ -6,7 +6,7 @@ email: 13021008001@163.com
 description: "Java Android"
 keyword: "coding"
 url: "http://johnnwen.github.io"              # your host, for absolute URL
-baseurl: "/"                             # for example, '/blog' if your blog hosted on 'host/blog'
+baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 
 
