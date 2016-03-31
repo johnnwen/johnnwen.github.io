@@ -1,22 +1,22 @@
 # Site settings
-title: zunda Blog
-SEOTitle: 遵达的博客 | Phoenixdo Blog
-header-img: img/zunda_backgrond.jpg
-email: zunda001@163.com
-description: "iOS Android"
-keyword: ""
-url: "http://saberzun.github.io"              # your host, for absolute URL
+title: wangyw Blog
+SEOTitle: 王有文的博客 | johnnwen Blog
+header-img: img/wangyw_backgrond.jpg
+email: 13021008001@163.com
+description: "Java Android"
+keyword: "coding"
+url: "http://johnnwen.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 
 
 # SNS settings
 RSS: false
-weibo_username:     2150869623
-zhihu_username:     zunda
-github_username:    saberzun
+weibo_username:     johnnwen
+zhihu_username:     王有文
+github_username:    wenlovexx
 #twitter_username:  huxpro
-facebook_username:  zundaphoenix
+#facebook_username:  zundaphoenix
 
 
 
@@ -68,8 +68,8 @@ disqus_username: saberzungithubio
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "iOS Android"
-sidebar-avatar: /img/zunda.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "Java Android"
+sidebar-avatar: /img/wangyw.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -82,11 +82,7 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 # Friends
 friends: [
     {
-        title: "温智全",
-        href: "http://wenzhiquan.github.io"
-    },
-    {
-        title: "肖楚天",
-        href: "http://xiaochutian.github.io"
+        title: "遵达",
+        href: "http://http://saberzun.github.io"
     }
 ]
