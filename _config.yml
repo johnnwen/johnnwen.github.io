@@ -88,3 +88,4 @@ friends: [
 ]
 
 gems: [jekyll-paginate]
+markdown:rdiscount
