@@ -1,14 +1,15 @@
 ---
 layout:     post
-title:      "HelloMyBlog"
-subtitle:   "测试"
-date:       2016-04-01 11:00:00
-author:     "johnnwen"
-header-img: "img/post-bg-digital-native.jpg"
+title:      "归并排序"
+subtitle:   "非递归 "
+date:       2016-03-28 12:00:00
+author:     "PhoenixDo"
+header-img: "img/post-bg-alibaba.jpg"
 header-mask: 0.3
 catalog:    true
 tags:
-    - 测试
+    - 算法
+    - 排序
 ---
 
 
