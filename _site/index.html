@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="iOS Android">
-    <meta name="keyword"  content="">
+    <meta name="description" content="Java Android">
+    <meta name="keyword"  content="coding">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>遵达的博客 | Phoenixdo Blog</title>
+    <title>王有文的博客 | johnnwen Blog</title>
 
-    <link rel="canonical" href="http://saberzun.github.io/">
+    <link rel="canonical" href="http://johnnwen.github.io/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -62,7 +62,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">zunda Blog</a>
+            <a class="navbar-brand" href="/">wangyw Blog</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -143,14 +143,14 @@
 
 
     <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/zunda_backgrond.jpg')">
+<header class="intro-header" style="background-image: url('/img/wangyw_backgrond.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
                 <div class="site-heading">
-                    <h1>zunda Blog</h1>
+                    <h1>wangyw Blog</h1>
                     <!--<hr class="small">-->
-                    <span class="subheading">求Offer的小鶸鸡</span>
+                    <span class="subheading">Constant dropping wears the stone</span>
                 </div>
             </div>
         </div>
@@ -173,100 +173,6 @@
             ">
     			
 <div class="post-preview">
-    <a href="/2016/03/30/iOS-interview/">
-        <h2 class="post-title">
-            iOS面试总结
-        </h2>
-        
-        <h3 class="post-subtitle">
-            阿里巴巴    一面-杭州
-        </h3>
-        
-        <div class="post-content-preview">
-            问题
-首先是做自我介绍，然后介绍一下自己的项目经历，之后就是提问。
-
-常用的controller
-
-
-
-UINavigationController 中A–》B–》C，如何直接从C中跳转回A
-可以多次调用popViewControllerAnimated      或者使用popToRootViewControllerAnimated直接回到root view
-
-常用的开源框架
-
-SDWeb...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by zunda on March 30, 2016
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2016/03/28/iOS-Thread/">
-        <h2 class="post-title">
-            iOS 多线程技术
-        </h2>
-        
-        <h3 class="post-subtitle">
-            NSThread、NSOperation、GCD
-        </h3>
-        
-        <div class="post-content-preview">
-            iOS多线程技术
-（1）、NSThread
-（2）、NSOperation
-（3）、GCD   Grand Central Dispatch
-
-NSThread
-
-线程声明和调用方法：
-
-(1) [NSThread detachNewThreadSelector:@selector(threadMethod:) toTarget:self withObject:nil];
-
-(2) NSTh...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by PhoenixDo on March 28, 2016
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2016/03/28/copy_random_link/">
-        <h2 class="post-title">
-            复制一个带随机指针的链表
-        </h2>
-        
-        <h3 class="post-subtitle">
-            链表的random指针
-        </h3>
-        
-        <div class="post-content-preview">
-            题目
-有一个链表L,其每个节点有2个指针，一个指针next指向链表的下个节点，另一个random随机指向链表中的任一个节点，可能是自己或者为空，写一个程序，要求复制这个链表的结构并分析其复杂性
-
-
-
-思路
-如上图所示，复制原链表，需要先将原链表数据节点翻倍并顺序连接
-
-    A-&gt;A`-&gt;B-&gt;B`-&gt;C-&gt;C`-&gt;D-&gt;D`
-
-
-根据原节点中ra...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by PhoenixDo on March 28, 2016
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
     <a href="/2016/03/28/merge/">
         <h2 class="post-title">
             归并排序
@@ -284,41 +190,6 @@ NSThread
 归并排序的基本思想
 
 将待排序序列R[0…n-1]看成是n个长度为1的有序序列，将相邻的有序表成对归并，得到n/2个长度...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by PhoenixDo on March 28, 2016
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2016/03/28/iOS-memory/">
-        <h2 class="post-title">
-            iOS 引用计数
-        </h2>
-        
-        <h3 class="post-subtitle">
-            assign、retain、copy
-        </h3>
-        
-        <div class="post-content-preview">
-            assign
-简单赋值，不改变引用计数
-适用与基本类型（NSInteger）和C基本类型
-
--(void)setCount:(int)count{
-    _count = count;
-}
-
-
-
-retain
-指针拷贝，retain创建一个指针，原对象引用计数+1
-
--(void)setDog:(Dog *)dog{
-    if(_dog != dog){
-        [_dog r...
         </div>
     </a>
     <p class="post-meta">
@@ -354,32 +225,6 @@ retain
 </div>
 <hr>
 
-<div class="post-preview">
-    <a href="/2016/02/01/React-vs-Angular2/">
-        <h2 class="post-title">
-            React vs Angular 2：冰与火之歌「译」
-        </h2>
-        
-        <h3 class="post-subtitle">
-            React versus Angular 2: There Will Be Blood
-        </h3>
-        
-        <div class="post-content-preview">
-            
-  这篇文章转载自我在知乎专栏「前端外刊评论」上发表的文章。
-
-
-Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热门框架。是时候进行一场巅峰对决了，我们来看看它如何与 React 这个 2015 年的新宠抗衡。
-
-免责声明：我之前很喜欢使用 Angular 1，不过在 2015 年转到了 React。最近我也在 Pluralsight 上发布了一门关于 R...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Hux on February 1, 2016
-    </p>
-</div>
-<hr>
-
 
 <!-- Pager -->
 
@@ -401,13 +246,7 @@ Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热�
                     <div class="tags">
                         
                             
-                        
-                            
-                        
-                            
-                        
-                            
-                                <a href="/tags/#算法" title="算法" rel="3">
+                                <a href="/tags/#算法" title="算法" rel="2">
                                     算法
                                 </a>
                             
@@ -416,20 +255,6 @@ Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热�
                                 <a href="/tags/#排序" title="排序" rel="2">
                                     排序
                                 </a>
-                            
-                        
-                            
-                        
-                            
-                                <a href="/tags/#iOS" title="iOS" rel="3">
-                                    iOS
-                                </a>
-                            
-                        
-                            
-                        
-                            
-                        
                             
                         
                     </div>
@@ -441,10 +266,10 @@ Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热�
                     <hr><h5><a href="/about/">ABOUT ME</a></h5>
                     <div class="short-about">
                         
-                            <img src="/img/zunda.jpg" />
+                            <img src="/img/wangyw.jpg" />
                         
                         
-                            <p>iOS Android</p>
+                            <p>Java Android</p>
                         
                         <!-- SNS Link -->
                         <ul class="list-inline">
@@ -452,7 +277,7 @@ Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热�
                             
                             
                             <li>
-                                <a target="_blank" href="https://www.zhihu.com/people/zunda">
+                                <a target="_blank" href="https://www.zhihu.com/people/johnnwen">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa  fa-stack-1x fa-inverse">知</i>
@@ -462,7 +287,7 @@ Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热�
                             
                             
                             <li>
-                                <a target="_blank" href="http://weibo.com/2150869623">
+                                <a target="_blank" href="http://weibo.com/johnnwen">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
@@ -472,7 +297,7 @@ Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热�
                             
                             
                             <li>
-                                <a target="_blank" href="https://www.facebook.com/zundaphoenix">
+                                <a target="_blank" href="https://www.facebook.com/johnnwen2016">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -482,7 +307,7 @@ Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热�
                             
                             
                             <li>
-                                <a target="_blank" href="https://github.com/saberzun">
+                                <a target="_blank" href="https://github.com/wenlovexx">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -499,9 +324,7 @@ Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热�
                 <h5>FRIENDS</h5>
                 <ul class="list-inline">
                     
-                        <li><a href="http://wenzhiquan.github.io">温智全</a></li>
-                    
-                        <li><a href="http://xiaochutian.github.io">肖楚天</a></li>
+                        <li><a href="http://saberzun.github.io">遵达</a></li>
                     
                 </ul>
                 
@@ -523,7 +346,7 @@ Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热�
                     <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
                     
                     <li>
-                        <a target="_blank" href="https://www.zhihu.com/people/zunda">
+                        <a target="_blank" href="https://www.zhihu.com/people/johnnwen">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa  fa-stack-1x fa-inverse">知</i>
@@ -533,7 +356,7 @@ Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热�
                     
                     
                     <li>
-                        <a target="_blank" href="http://weibo.com/2150869623">
+                        <a target="_blank" href="http://weibo.com/johnnwen">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
@@ -545,7 +368,7 @@ Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热�
 
                     
                     <li>
-                        <a target="_blank" href="https://www.facebook.com/zundaphoenix">
+                        <a target="_blank" href="https://www.facebook.com/johnnwen2016">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -555,7 +378,7 @@ Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热�
                     
                     
                     <li>
-                        <a target="_blank" href="https://github.com/saberzun">
+                        <a target="_blank" href="https://github.com/wenlovexx">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -565,9 +388,9 @@ Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热�
                     
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; zunda Blog 2016
+                    Copyright &copy; wangyw Blog 2016
                     <br>
-                    Theme © <a href="http://Saberzun.github.io">Phoenixdo</a> 
+                    Theme © <a href="http://johnnwen.github.io">wangyouwen</a> 
                 </p>
             </div>
         </div>

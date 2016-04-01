@@ -1,0 +1,29 @@
+---
+layout:     post
+title:      "HelloMyBlog"
+subtitle:   "测试"
+date:       2016-04-01 11:00:00
+author:     "johnnwen"
+header-img: "img/post-bg-digital-native.jpg"
+header-mask: 0.3
+catalog:    true
+tags:
+    - 测试
+---
+
+
+
+#HelloMyBlog
+
+    #include <iostream>
+    using namespace std;
+
+    int main()
+    {
+        cout << "Hello MyBlog" << endl;
+
+        return 0;
+    }
+ 
+
+  
