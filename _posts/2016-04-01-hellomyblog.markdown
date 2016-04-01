@@ -1,9 +1,9 @@
 ---
 layout:     post
-title:      "HelloMyBlog"
-subtitle:   "test"
-date:       2016-04-01 11:00:00
-author:     "johnnwen"
+title:      "归并排序"
+subtitle:   "非递归 "
+date:       2016-03-28 12:00:00
+author:     "PhoenixDo"
 header-img: "img/post-bg-alibaba.jpg"
 header-mask: 0.3
 catalog:    true
