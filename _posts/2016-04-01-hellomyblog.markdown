@@ -2,7 +2,7 @@
 layout:     post
 title:      "helloMyBlog"
 subtitle:   "测试"
-date:       2016-03-28 12:00:00
+date:       2016-03-29 12:00:00
 author:     "johnnwen"
 header-img: "img/post-bg-digital-native.jpg"
 header-mask: 0.3
