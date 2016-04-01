@@ -8,7 +8,6 @@ header-img: "img/post-bg-digital-native.jpg"
 header-mask: 0.3
 catalog:    true
 tags:
-    - 算法
     - 测试
 ---
 
