@@ -2,7 +2,7 @@
 layout:     post
 title:      "版本控制工具git"
 subtitle:   "git"
-date:       2016-04-01 8:00:00
+date:       2016-04-01 16:00:00
 author:     "johnnwen"
 header-img: "img/post-bg-digital-native.jpg"
 header-mask: 0.3
