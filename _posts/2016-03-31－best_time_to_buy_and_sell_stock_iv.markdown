@@ -2,7 +2,7 @@
 layout:     post
 title:      "leetcode 188"
 subtitle:   "Best Time to Buy and Sell Stock IV"
-date:       2016-03-31 12:00:00
+date:       2016-03-30 12:00:00
 author:     "Johnnwen"
 header-img: "img/post-bg-digital-native.jpg"
 catalog:    true
@@ -11,6 +11,7 @@ tags:
     - leetcode
     - 动态规划
     - c++
+    
 ---
 
 # Best Time to Buy and Sell Stock IV
