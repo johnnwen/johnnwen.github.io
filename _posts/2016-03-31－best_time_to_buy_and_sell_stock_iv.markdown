@@ -1,0 +1,65 @@
+---
+layout:     post
+title:      "leetcode 188"
+subtitle:   "Best Time to Buy and Sell Stock IV"
+date:       2016-03-31 15:00:00
+author:     "Johnnwen"
+header-img: "img/post-bg-digital-native.jpg"
+catalog:    true
+tags:
+    - 算法
+    - leetcode
+    - 动态规划
+    － c++
+---
+
+# Best Time to Buy and Sell Stock IV
+
+>     题意：用一个数组表示股票每天的价格，数组的第i个数表示股票在第i天的价格。最多交易k次，手上最多只能持有一支股票，求最大收益
+#### 代码
+
+>c++
+
+```
+class Solution {
+public:
+    int maxProfit(int k, vector<int>& prices) {
+        if(prices.size() < 2)
+            return 0;
+        
+        if(k >= prices.size())
+            return maxProfit2(prices);
+        
+        int n = prices.size();
+        vector<int> temp(k+1,0);
+        vector<vector<int>> local(n,temp);
+        vector<vector<int>> globle(n,temp);
+        for(int i = 1;i<n;i++){
+            int diff = prices[i] - prices[i-1];
+            for(int j = 1;j<=k;j++){
+                local[i][j] = max(globle[i-1][j-1]+diff,local[i-1][j] + diff);
+                globle[i][j] = max(globle[i-1][j],local[i][j]);
+            }
+        }
+        return globle[n-1][k];
+    }
+    
+    int maxProfit2(vector<int> &prices){
+        int maxProfit = 0;
+        for(int i = 1;i<prices.size();i++){
+            int gas = prices[i] - prices[i-1];
+            if(gas > 0){
+                maxProfit += gas;
+            }
+        }
+        return maxProfit;
+
+        
+    }
+};
+```
+##分析
+用local[i][j]表示到达第i天时，最多进行j次交易的局部最优解；用global[i][j]表示到达第i天时，最多进行j次的全局最优解。它们二者的关系如下（其中diff = prices[i] – prices[i – 1]）：<br>
+
+	local[i][j] = max(globle[i-1][j-1]+diff,local[i-1][j] + diff);
+    globle[i][j] = max(globle[i-1][j],local[i][j]);
