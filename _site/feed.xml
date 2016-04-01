@@ -5,9 +5,177 @@
     <description>Java Android</description>
     <link>http://johnnwen.github.io/</link>
     <atom:link href="http://johnnwen.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 01 Apr 2016 16:29:41 +0800</pubDate>
-    <lastBuildDate>Fri, 01 Apr 2016 16:29:41 +0800</lastBuildDate>
+    <pubDate>Fri, 01 Apr 2016 21:17:22 +0800</pubDate>
+    <lastBuildDate>Fri, 01 Apr 2016 21:17:22 +0800</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>版本控制工具git</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;版本控制工具&lt;/h2&gt;
+&lt;p&gt;Git 是一个开源的分布式版本控制工具,它的开发者就是鼎鼎大名的 Linux 操作系统的 作者 Linus Torvalds。Git 被开发出来的初衷本是为了更好地管理 Linux 内核,而现在却早已 被广泛应用于全球各种大中小型的项目中.&lt;br /&gt;
+昨天利用Github＋Jekyll搭建了&lt;a href=&quot;wangyouwen.cn&quot;&gt;自己的技术博客&lt;/a&gt;，然而以前学了点关于git基本命令几乎记不大清楚了，所写一篇关于git版本控制的博客方便以后查看。&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;git&quot;&gt;安装 Git&lt;/h3&gt;
+
+&lt;p&gt;由于 Git 和 Linux 操作系统都是同一个作者,因此不用我说你也应该猜到 Git 在 Linux上的安装是最简单方便的。比如你使用的是 Ubuntu 系统只需要打开 shell 界面,并输入:&lt;br /&gt;
+	sudo apt-get install git-core&lt;/p&gt;
+
+&lt;p&gt;如果是Mac系统，自带Git,所以无需安装便可以使用了。&lt;br /&gt;
+如果Windows操作系统，需要先把 Git 的安装包下载下来。访问网址 http://msysgit.github.io/,可以看到如下图所示的页面。&lt;br /&gt;
+&lt;img src=&quot;/img/gitdownload.jpg&quot; alt=&quot;gitdownload&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;点击网页中央的 Downloads 链接会跳转到的如下图所示的下载列表页面&lt;br /&gt;
+&lt;img src=&quot;/img/gitdownlist.jpg&quot; alt=&quot;gitdownload&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这里目前最新的 Git 版本是 2.8.0,下载完成后双击安装包进行安装,之后一直点击下一步就可以完成安装了。&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;创建代码仓库&lt;/h3&gt;
+
+&lt;p&gt;虽然在 Windows 上安装的 Git 是可以在图形界面上进行操作的,但是我觉得掌握Git的各种命令才是硬道理…这样不管你是在哪个操作系统中,使用命令来操作Git必然都是通用的。&lt;br /&gt;
+如果是Linux系统 or Mac系统,则打开shell界面,如果使用的是 Windows 系统,就从开始里找到 Git Bash 并打开。
+首先应该配置身份,这样在提交代码的时候 Git 就可以知道是who提交了,命 令如下所示:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git config --global user.name &quot;xxx&quot;
+git config --global user.email &quot;xxx@gmail.com&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;接下来就开始创建代码仓库吧,仓库(Repository)是用于保存版本管理所需信息的地方,所有本地提交的代码都会被提交到代码仓库中,还可以再推送到远程仓库中。&lt;br /&gt;
+输入如下命令就可以完成创建代码仓库的操作&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git init
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;仓库创建完成后,会在根目录下生成一个隐藏的.git 文件夹, 这个文件夹就是用来记录本地所有的 Git 操作&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;提交本地代码&lt;/h3&gt;
+
+&lt;p&gt;代码仓库建立完之后就可以提交代码了,只需要使用 add 和 commit 命令。add 是把要提交的代码添加进来,commit 是执行提交的操作。如下命令:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add 要提交的文件      //git add . 表示添加所有的文件
+git commit －m &#39;提交的描述信息&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;忽略文件&lt;/h3&gt;
+
+&lt;p&gt;Git提供了一种可配性很强的机制允许用户将指定的文件或目录排除在版本控制之外,它会检查代码仓库的根目录下是否存在一个名为.gitignore 的文件,如果存在则逐行读取这个文件中的内容,并把每一行指定的文件或目录排除在版本控制之外。&lt;br /&gt;
+&lt;strong&gt;* .gitignore 中指定的文件或目录可以使用“&lt;em&gt;”通配符&lt;br /&gt;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;查看修改内容&lt;/h3&gt;
+
+&lt;p&gt;输入如下命令来查看自上次提交后文件修改的内容:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git status
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;输入如下命令查看到所有文件的更改内容:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git diff
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;撤销未提交的修改&lt;/h3&gt;
+
+&lt;p&gt;输入如下命令撤销未提交的修改&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git checkout 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;不过这种撤销方式只适用于那些还没有执行过 add 命令的文件,如果某个文件已经被添加过了,这种方式就无法撤销其更改的内容,对于已添加的文件应该先对其取消添加,然后才可以撤回提交。取消添加使用的是reset命令,用法如下所示:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git reset HEAD
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;查看提交记录&lt;/h3&gt;
+
+&lt;p&gt;Git 帮我们清清楚楚地记录着修改的内容，使用 log 命令查看历史提交信息,用法如下所示,如果想要查看这条提交记录具体修改了什么内容,可以在命令中加入-p 参数:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git log
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-7&quot;&gt;分支的用法&lt;/h3&gt;
+
+&lt;p&gt;工具中比较高级且比较重要的一个概念,它主要的作用就是在现有代码 的基础上开辟一个分叉口,使得代码可以在主干线和分支线上同时进行开发,且相互之间不会影响。查看当前的版本库当中有哪些分支,可以使用 git branch –a 这个命令:&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git branch –a 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;创建了一个名为 version1.0 的分支&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git branch version1.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;切换到 version1.0 这 个分支&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git checkout version1.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;注意,在 version1.0 分支上修改并提交的代码将不会影响到 master 分支。同样 的道理,在 master 分支上修改并提交的代码也不会影响到 version1.0 分支。因此,如果我们 在 version1.0 分支上修复了一个 bug,在 master 分支上这个 bug 仍然是存在的。这时将修改的代码一行行复制到 master 分支上不太现实，最好的办法就是使用 merge 命令来完成合并操作,如下所示:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+ 	git checkout master
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git merge version1.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;最后,当我们不再需要 version1.0 这个分支的时候,可以使用如下命令将这个分支删除掉:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git branch -D version1.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-8&quot;&gt;与远程版本库协作&lt;/h3&gt;
+
+&lt;p&gt;使用如下的命令将代码下载到本地:
+	git clone 远程版本库的 Git 地址
+本地修改的内容同步到远程版本库上使用push命令来完成,用法如下所示:
+	git push origin master
+将远程版本库上的修改同步到本地使用Git提供了两种命令来完成,分别是 fetch 和 pull,如下所示:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git fetch origin master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;执行这个命令后,就会将远程版本库上的代码同步到本地,但是同步下来的代码并不会合并到任何分支上去,而是会存放在到一个 origin/master 分支上,这时我们可以通过 diff 命令来查看远程版本库上修改了哪些东西:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git diff origin/master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;再调用 merge 命令将 origin/master 分支上的修改合并到主分支上即可,如下所示:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git merge origin/master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;pull 命令则是相当于将 fetch 和 merge 这两个命令放在一起执行了,它可以从远程版本库上获取最新的代码并且合并到本地,用法如下所示:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git pull origin master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;这些都是对远程版本库的使用的几本命令,赶快实践吧….&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 01 Apr 2016 16:00:00 +0800</pubDate>
+        <link>http://johnnwen.github.io/2016/04/01/git/</link>
+        <guid isPermaLink="true">http://johnnwen.github.io/2016/04/01/git/</guid>
+        
+        <category>git</category>
+        
+        <category>版本控制工具</category>
+        
+        
+      </item>
     
       <item>
         <title>leetcode 188</title>
@@ -80,32 +248,6 @@ globle[i][j] = max(globle[i-1][j],local[i][j]);
         <category>动态规划</category>
         
         <category>c++</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>helloMyBlog</title>
-        <description>&lt;h1 id=&quot;hellomyblog&quot;&gt;HelloMyBlog&lt;/h1&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;
-using namespace std;
-
-int main()
-{
-    cout &amp;lt;&amp;lt; &quot;Hello MyBlog&quot; &amp;lt;&amp;lt; endl;
-
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Thu, 31 Mar 2016 18:00:00 +0800</pubDate>
-        <link>http://johnnwen.github.io/2016/03/31/hellomyblog/</link>
-        <guid isPermaLink="true">http://johnnwen.github.io/2016/03/31/hellomyblog/</guid>
-        
-        <category>测试</category>
         
         
       </item>
