@@ -86,6 +86,3 @@ friends: [
         href: "http://saberzun.github.io"
     }
 ]
-
-gems: [jekyll-paginate]
-markdown:rdiscount
