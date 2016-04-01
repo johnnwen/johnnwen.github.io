@@ -1,14 +1,15 @@
 ---
 layout:     post
-title:      "测试"
-subtitle:   "测试"
-date:       2016-04-01 12:00:00
+title:      "归并排序"
+subtitle:   "非递归 "
+date:       2016-03-28 12:00:00
 author:     "PhoenixDo"
 header-img: "img/post-bg-alibaba.jpg"
 header-mask: 0.3
 catalog:    true
 tags:
-    - test
+    - 算法
+    - 排序
 ---
 
 
