@@ -30,7 +30,7 @@ public:
 	int maxProfit(int k, vector<int>& prices) {
         if(prices.size() < 2)
             return 0;
-        
+        //当k大于天数时，就是 Best Time to Buy and Sell Stock II 了，不需要动态规划
         if(k >= prices.size())
             return maxProfit2(prices);
         
@@ -64,10 +64,12 @@ public:
 
 ```
 
-#### 分析
+##### 分析
 
 用local[i][j]表示到达第i天时，最多进行j次交易的局部最优解；用global[i][j]表示到达第i天时，最多进行j次的全局最优解。它们二者的关系如下（其中diff = prices[i] – prices[i – 1]）：<br>
 
 
 	local[i][j] = max(globle[i-1][j-1]+diff,local[i-1][j] + diff);
     globle[i][j] = max(globle[i-1][j],local[i][j]);
+    
+**注意：当k大于天数时，就是 Best Time to Buy and Sell Stock II 了，不需要动态规划**
