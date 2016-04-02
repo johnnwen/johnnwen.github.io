@@ -87,7 +87,9 @@ Given a non-zero positive integer, return its corresponding column title as appe
         
     	}
 	};
+	
 ##### 分析
+
 题目大意的本质上就是将一个10进制数转换为一个26进制的数。<br>
 
 ***注意 ：由于下标从1开始而不是从0开始，因此要减一操作***
