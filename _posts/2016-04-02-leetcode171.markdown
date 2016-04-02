@@ -14,10 +14,13 @@ tags:
 ---
 
 ## Excel Sheet Column Number
-### 题意：
+
+##### 题意：
+
 Given a column title as appear in an Excel sheet, return its corresponding column number.
 
-### 例如
+##### 例如
+
 >A -> 1
 
 >B -> 2
@@ -32,7 +35,7 @@ Given a column title as appear in an Excel sheet, return its corresponding colum
     
 >AB -> 28 
     
-### 代码如下
+##### 代码如下
   
 	class Solution {
 	public:
@@ -48,17 +51,21 @@ Given a column title as appear in an Excel sheet, return its corresponding colum
     	}
 	};
 	
-### 分析
+##### 分析
 题目大意就是处理26进制，逐个读入字符串中的每一个字符进行处理转换即可。<br>
+
 ***注意 ：由于下标从1开始而不是从0开始，因此要加一操作***
 
 
 leetcodeyou另一道题目**168. Excel Sheet Column Title**和这道题目互逆，题意如下：
+
 ### Excel Sheet Column Title
 
 Given a non-zero positive integer, return its corresponding column title as appear in an Excel sheet.
 
-###For example:
+
+##### For example:
+
 
 >1 -> A
 
