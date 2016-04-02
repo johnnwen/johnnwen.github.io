@@ -21,19 +21,13 @@ Given a column title as appear in an Excel sheet, return its corresponding colum
 
 ##### 例如
 
->A -> 1
-
->B -> 2
-
->C -> 3
-    
->...
-
->Z -> 26
-    
->AA -> 27
-    
->AB -> 28 
+	A -> 1	
+	B -> 2
+	C -> 3
+	...
+	Z -> 26
+	AA -> 27
+	AB -> 28 
     
 ##### 代码如下
   
@@ -67,19 +61,13 @@ Given a non-zero positive integer, return its corresponding column title as appe
 ##### For example:
 
 
->1 -> A
-
->2 -> B
-
->3 -> C
-
->...
-
->26 -> Z
-
->27 -> AA
-
->28 -> AB 
+	1 -> A
+	2 -> B
+	3 -> C
+	...
+	26 -> Z
+	27 -> AA
+	28 -> AB 
 
 ### 代码如下
 
@@ -100,6 +88,7 @@ Given a non-zero positive integer, return its corresponding column title as appe
 	};
 ### 分析
 题目大意的本质上就是将一个10进制数转换为一个26进制的数。<br>
+
 ***注意 ：由于下标从1开始而不是从0开始，因此要减一操作***
 	
 
