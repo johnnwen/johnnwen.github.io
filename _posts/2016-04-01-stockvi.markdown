@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "leetcode 188"
-subtitle:   "Best Time to Buy and Sell Stock IV"
+title:      "Best Time to Buy and Sell Stock IV"
+subtitle:   "leetcode 188"
 date:       2016-03-31 12:00:00
 author:     "Johnnwen"
 header-img: "img/post-bg-digital-native.jpg"
