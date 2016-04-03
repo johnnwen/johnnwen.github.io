@@ -4,7 +4,7 @@ title:      "Binary Tree Traversal"
 subtitle:   "二叉树遍历"
 date:       2016-04-02 10:00:00
 author:     "Johnnwen"
-header-img: "img/post-bg-digital-native.jpg"
+header-img: "img/post-bg-binaryTree.jpg"
 catalog:    true
 tags:
     - 非递归
@@ -208,6 +208,8 @@ public:
     }
 };
 ```
+
+#### 分析
 
 	1、如果根节点空，则直接返回空的vector容器
 	2、左子树压栈操作（如果左子树非空，一直执行压栈操作，直到左子树为空）
