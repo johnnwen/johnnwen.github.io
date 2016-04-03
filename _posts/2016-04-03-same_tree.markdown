@@ -5,7 +5,7 @@ subtitle:   "二叉树相同"
 date:       2016-04-02 16:00:00
 author:     "Johnnwen"
 header-img: "img/post-bg-binaryTree.jpg"
-catalog:    false
+catalog:    true
 tags:
     - 非递归
     - leetcode
