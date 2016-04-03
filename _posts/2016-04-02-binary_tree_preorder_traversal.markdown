@@ -9,7 +9,7 @@ catalog:    true
 tags:
     - 非递归
     - leetcode
-    - 二叉树遍历
+    - 二叉树
     - c++
     
 ---
