@@ -17,11 +17,13 @@ tags:
 
 ## 226. Invert Binary Tree
 
-####题意
+
+#### 题意
+
 
 Invert a binary tree.
 
-	  	4
+		4
 	   /   \
 	  2     7
 	 / \   / \
