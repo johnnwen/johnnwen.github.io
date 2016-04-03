@@ -112,21 +112,19 @@ public:
         stack<TreeNode *> stack;  
         TreeNode *pnode = root;  
         vector<int> vector; 
-        if(root != NULL){
-            while(pnode || !stack.empty()) {  
-                while(pnode) {  
-                    stack.push(pnode);  
-                    pnode = pnode->left;  
-                }  
-                if(!stack.empty()) {  
-                    pnode = stack.top(); 
-                    stack.pop(); 
-                    vector.push_back(pnode->val);  
-                    pnode = pnode->right;  
-                }  
+        while(pnode || !stack.empty()) {  
+            while(pnode) {  
+                stack.push(pnode);  
+                pnode = pnode->left;  
             }  
-            return vector;  
-        }
+            if(!stack.empty()) {  
+                pnode = stack.top(); 
+                stack.pop(); 
+                vector.push_back(pnode->val);  
+                pnode = pnode->right;  
+            }  
+        }  
+        return vector;  
     }
 };
 ```
@@ -156,12 +154,14 @@ public:
 
 ```
 
-递归的解法十分简单，然后同上提一样题目强调不能使用递归实现，非递归实现前序遍历大体思路如下：<br>
+递归的解法十分简单，然后同上题一样题目强调不能使用递归实现，非递归实现前序遍历大体思路如下：<br>
 
 	1、如果根节点空，则直接返回空的vector
-	2、左子树压栈操作（如果左子树非空，一直执行压栈操作，知道左子树为空）
-	3、如果栈不空，弹出出栈顶节点，将其值加加入vector容器中。
+	2、左子树压栈操作（如果左子树非空，一直执行压栈操作，直到左子树为空）
+	3、如果栈不空，弹出栈顶节点，将其值加入vector容器中，并且遍历当前节点的右子树。
 	4、重复第2、3步。
+
+
 	
 ## 145. Binary Tree Postorder Traversal
 
@@ -208,6 +208,11 @@ public:
     }
 };
 ```
+
+	1、如果根节点空，则直接返回空的vector容器
+	2、左子树压栈操作（如果左子树非空，一直执行压栈操作，直到左子树为空）
+	3、如果栈不空，栈顶节点的右子树不空且右子树还没有访问过，则遍历该节点的右子树；否则从栈顶弹出节点，将其值加入vector容器中，设置该节点已被访问标志。
+	4、重复第2、3步。
 	
 
 
