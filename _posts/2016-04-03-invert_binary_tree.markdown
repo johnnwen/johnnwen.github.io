@@ -23,7 +23,8 @@ tags:
 
 Invert a binary tree.
 
-		4
+
+	     4
 	   /   \
 	  2     7
 	 / \   / \
@@ -33,7 +34,7 @@ Invert a binary tree.
 **to**
 
 
-		4
+	     4
 	   /   \
 	  7     2
 	 / \   / \
