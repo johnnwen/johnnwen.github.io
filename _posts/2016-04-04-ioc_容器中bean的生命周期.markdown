@@ -122,7 +122,7 @@ destrory
 - 为Bean的属性设置值和对其他Bean的引用
 - 将Bean实例传递给Bean后置处理器的postProcessBeforeInitialization方法
 - 调用Bean的初始化方法
--将Bean实例传递给Bean后置处理器的postProcessBeforeInitialization方法
+- 将Bean实例传递给Bean后置处理器的postProcessBeforeInitialization方法
 - Bean可以使用
 - 当容器关闭是，调用Bean的销毁方法
 
