@@ -4,7 +4,7 @@ title:      "Maximum Product of Word Lengths "
 subtitle:   "单词长度的最大积 "
 date:       2016-04-05 08:00:00
 author:     "Johnnwen"
-header-img: "img/post-bg-kuaidi.jpg"
+header-img: "img/post-bg-kb3.jpg"
 catalog:    true
 tags:
     - leetcode
