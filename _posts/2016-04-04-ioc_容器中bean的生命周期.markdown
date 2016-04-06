@@ -115,7 +115,7 @@ destrory
 
 ##### Bean后置处理器对IOC容器里的所有Bean实例逐一的处理（而不是单一实例）
 
-其典型的应用是：检查Bean属性的正确性或根据特定的标准更改Bean属性
+> 其典型的应用是：检查Bean属性的正确性或根据特定的标准更改Bean属性
 
 ##### 对Bean后置处理器而言，需要实现Interface BeanPostProcessor接口，在初始化方法别调用前，Spring将把每一个Bean实例分别传递给上述接口的一下两个方法：
 
@@ -127,14 +127,17 @@ postProcessBeforeInitialization(Object bean, String beanName) :init－method之�
 	bean：bean实例本身
 	beanName：IOC容器配置的bean名字
 	返回值是实际上返回给用户的Bean， 
- ```
+	
+```
+
  
  　***注意：可以在以上的两个方法中修改返回的Bean，甚至返回一个新的Bean***
+ 　
  
 #####  添加Bean后置处理器的生命周期
 
+
 - 通过构造器或工厂方法创建Bean实例
-	
 - 为Bean的属性设置值和对其他Bean的引用
 - 将Bean实例传递给Bean后置处理器的postProcessBeforeInitialization方法
 - 调用Bean的初始化方法
@@ -142,10 +145,14 @@ postProcessBeforeInitialization(Object bean, String beanName) :init－method之�
 - Bean可以使用
 - 当容器关闭时，调用Bean的销毁方法
 
-### 主要代码如下
+
+
+###  主要代码如下
+
 
 
 ##### Spring配置文件
+
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -201,13 +208,13 @@ public class MyBeanPostProcessor implements BeanPostProcessor{
 		Car car = new Car();
 		car.setBrand("BenChi");
 		return car;
-	}
-
-	
+	}	
 }
+
 ```
 
 ##### 控制台输出
+
 
 ```
 Car's Constructor
