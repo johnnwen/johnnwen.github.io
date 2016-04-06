@@ -1,22 +1,18 @@
 ---
 layout:     post
-title:      "最大子序列&最长公共子串&最长公共子序列 "
-subtitle:   " "
+title:      "Maximum Product of Word Lengths "
+subtitle:   "单词长度的最大积 "
 date:       2016-04-05 08:00:00
 author:     "Johnnwen"
 header-img: "img/post-bg-kuaidi.jpg"
 catalog:    true
 tags:
-    - 字符串
-    - 动态规划
-    - LCS
-    - DP
+    - leetcode
+    - 位运算
     - 数据结构
     - c++
     
 ---
-
-
 
 
 ###  318. Maximum Product of Word Lengths[译]
