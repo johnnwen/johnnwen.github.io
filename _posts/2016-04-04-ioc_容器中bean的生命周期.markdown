@@ -17,17 +17,21 @@ tags:
 
 ##### Spring IOC 容器可以管理Bean的生命周期
 
-**Spring允许在Bean生命周期的特定执行点知性定制的任务**
+> Spring允许在Bean生命周期的特定执行点知性定制的任务
 
 ##### Spring容器对Bean的生命周期进行管理的过程：
 
-	- 通过构造器或工厂方法创建Bean实例
-	－ 为Bean的属性设置值和对其他Bean的引用
-	－调用Bean的初始化方法
-	－Bean可以使用
-	－当容器关闭是，调用Bean的销毁方法
+- 通过构造器或工厂方法创建Bean实例
+- 为Bean的属性设置值和对其他Bean的引用
+- 调用Bean的初始化方法
+- Bean可以使用
+- 当容器关闭时，调用Bean的销毁方法
 
 ##### 在Bean的声明里设置init-method和destroy-method属性，为Bean指定初始化和销毁方法
+
+### 主要代码如下
+
+##### Spring配置文件
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -43,6 +47,8 @@ tags:
 
 </beans>
 ```
+##### Car类
+
 ```
 public class Car {
 	private String brand;
@@ -69,7 +75,7 @@ public class Car {
 
 }
 ```
-
+##### 测试类
 
 ```
 public class Main {
@@ -110,10 +116,15 @@ destrory
 ##### 对Bean后置处理器而言，需要实现Interface BeanPostProcessor接口，在初始化方法别调用前，Spring将把每一个Bean实例分别传递给上述接口的一下两个方法：
 
  ```
- postProcessAfterInitialization(Object bean,String beanName)
- postProcessBeforeInitialization(Object bean,String beanName)
- 
+postProcessAfterInitialization(Object bean, String beanName) :init－method之后被调用
+postProcessBeforeInitialization(Object bean, String beanName) :init－method之前被调用
+	
+	bean：bean实例本身
+	beanName：IOC容器配置的bean名字
+	返回值是实际上返回给用户的Bean， 
  ```
+ 
+ 　***注意：可以在以上的两个方法中修改返回的Bean，甚至返回一个新的Bean***
  
 #####  添加Bean后置处理器的生命周期
 
@@ -124,8 +135,12 @@ destrory
 - 调用Bean的初始化方法
 - 将Bean实例传递给Bean后置处理器的postProcessBeforeInitialization方法
 - Bean可以使用
-- 当容器关闭是，调用Bean的销毁方法
+- 当容器关闭时，调用Bean的销毁方法
 
+### 主要代码如下
+
+
+##### Spring配置文件
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -143,11 +158,11 @@ destrory
 	<!-- 实现BeanPostProcessor接口，并提供
 	postProcessAfterInitialization(Object bean, String beanName) :init－method之后被调用
 	postProcessBeforeInitialization(Object bean, String beanName) :init－method之前被调用
+	的实现
 	
 	bean：bean实例本身
 	beanName：IOC容器配置的bean名字
 	返回值是实际上返回给用户的Bean，注意：可以在以上的两个方法中修改返回的Bean，甚至返回一个新的Bean
-	的实现
 	 -->
 	<bean class="com.wyw.spring.cycle.MyBeanPostProcessor">
 	</bean>
@@ -156,8 +171,9 @@ destrory
 
 ```
 
-```
+##### 实现BeanPostProcessor接口的类
 
+```
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 
