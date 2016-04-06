@@ -46,7 +46,9 @@ tags:
 	</bean>
 
 </beans>
+
 ```
+
 ##### Car类
 
 ```
@@ -75,6 +77,7 @@ public class Car {
 
 }
 ```
+
 ##### 测试类
 
 ```
@@ -94,6 +97,7 @@ public class Main {
 }
 
 ```
+
 ##### 控制台输出
 
 ```
@@ -115,7 +119,8 @@ destrory
 
 ##### 对Bean后置处理器而言，需要实现Interface BeanPostProcessor接口，在初始化方法别调用前，Spring将把每一个Bean实例分别传递给上述接口的一下两个方法：
 
- ```
+```
+
 postProcessAfterInitialization(Object bean, String beanName) :init－method之后被调用
 postProcessBeforeInitialization(Object bean, String beanName) :init－method之前被调用
 	
