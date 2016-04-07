@@ -9,4 +9,3 @@
 
 This theme is forked from [IronSummitMedia/startbootstrap-clean-blog-jekyll](https://github.com/IronSummitMedia/startbootstrap-clean-blog-jekyll)  
 Thanks Jekyll and Github Pages!
-Thanks Github Pages[黄玄的Github Pages](https://github.com/Huxpro/huxpro.github.io.git)
