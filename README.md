@@ -1,8 +1,8 @@
 #zunda's Blog
 
-###[View 小鶸菌's Blog &rarr;](http://saberzun.github.io/)
+###[View 王有文's Blog &rarr;](http://wangyouwen.cn)
 
-![](http://huangxuan.me/img/blog-desktop.jpg)
+![](http://wangyouwen.cn/img/blog-desktop.jpg)
 
 
 ### "Page Build Warning" email
