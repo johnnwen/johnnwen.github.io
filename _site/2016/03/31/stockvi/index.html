@@ -10,7 +10,7 @@
     <meta name="keyword"  content="coding">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>leetcode 188 - 王有文的博客 | johnnwen Blog</title>
+    <title>Best Time to Buy and Sell Stock IV - 王有文的博客 | johnnwen Blog</title>
 
     <link rel="canonical" href="http://johnnwen.github.io/2016/03/31/stockvi/">
 
@@ -172,10 +172,10 @@
                         <a class="tag" href="/tags/#c++" title="c++">c++</a>
                         
                     </div>
-                    <h1>leetcode 188</h1>
+                    <h1>Best Time to Buy and Sell Stock IV</h1>
                     
                     
-                    <h2 class="subheading">Best Time to Buy and Sell Stock IV</h2>
+                    <h2 class="subheading">leetcode 188</h2>
                     
                     <span class="meta">Posted by Johnnwen on March 31, 2016</span>
                 </div>
@@ -195,24 +195,20 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-				<h1 id="best-time-to-buy-and-sell-stock-iv">Best Time to Buy and Sell Stock IV</h1>
+				<h2 id="best-time-to-buy-and-sell-stock-iv">Best Time to Buy and Sell Stock IV</h2>
 
-<blockquote>
-  <div class="highlighter-rouge"><pre class="highlight"><code>题意：用一个数组表示股票每天的价格，数组的第i个数表示股票在第i天的价格。最多交易k次，手上最多只能持有一支股票，求最大收益 #### 代码
-</code></pre>
-  </div>
-</blockquote>
+<h5 id="section">题意：</h5>
 
-<blockquote>
-  <p>c++</p>
-</blockquote>
+<p>用一个数组表示股票每天的价格，数组的第i个数表示股票在第i天的价格。最多交易k次，手上最多只能持有一支股票，求最大收益</p>
+
+<h5 id="section-1">代码</h5>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>class Solution {
 public:
-    int maxProfit(int k, vector&lt;int&gt;&amp; prices) {
+	int maxProfit(int k, vector&lt;int&gt;&amp; prices) {
         if(prices.size() &lt; 2)
             return 0;
-        
+        //当k大于天数时，就是 Best Time to Buy and Sell Stock II 了，不需要动态规划
         if(k &gt;= prices.size())
             return maxProfit2(prices);
         
@@ -243,15 +239,190 @@ public:
         
     }
 };
+
 </code></pre>
 </div>
-<p>##分析
-用local[i][j]表示到达第i天时，最多进行j次交易的局部最优解；用global[i][j]表示到达第i天时，最多进行j次的全局最优解。它们二者的关系如下（其中diff = prices[i] – prices[i – 1]）：<br /></p>
+
+<h5 id="section-2">分析</h5>
+
+<p>用local[i][j]表示到达第i天时，最多进行j次交易的局部最优解；用global[i][j]表示到达第i天时，最多进行j次的全局最优解。它们二者的关系如下（其中diff = prices[i] – prices[i – 1]）：<br /></p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>local[i][j] = max(globle[i-1][j-1]+diff,local[i-1][j] + diff);
 globle[i][j] = max(globle[i-1][j],local[i][j]);
 </code></pre>
 </div>
+
+<p><strong>注意：当k大于天数时，就是 Best Time to Buy and Sell Stock II 了，不需要动态规划</strong></p>
+
+<h2 id="section-3">扩充</h2>
+
+<h4 id="best-time-to-buy-and-sell-stock">Best Time to Buy and Sell Stock</h4>
+
+<h5 id="section-4">题意</h5>
+
+<p>Say you have an array for which the ith element is the price of a given stock on day i.<br />
+If you were only permitted to complete at most one transaction (ie, buy one and sell one share of the stock), design an algorithm to find the maximum profit.</p>
+
+<h5 id="section-5">代码</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class Solution {
+public:
+    int maxProfit(vector&lt;int&gt;&amp; prices) {
+        if(prices.size() &lt; 2)
+        	return 0;
+        int maxProfit = 0;
+        int curMin = prices[0];
+        for(int i = 1;i&lt;prices.size();i++){
+            curMin = min(curMin,prices[i]);
+            maxProfit = max(maxProfit,prices[i] - curMin);
+        }
+        return maxProfit;
+    }
+};
+</code></pre>
+</div>
+
+<h5 id="section-6">分析</h5>
+
+<p>动态规划法。从前向后遍历数组，记录当前出现过的最低价格，作为买入价格，并计算以当天价格出售的收益，作为可能的最大收益，整个遍历过程中，出现过的最大收益就是所求。</p>
+
+<h4 id="best-time-to-buy-and-sell-stock-ii">Best Time to Buy and Sell Stock II</h4>
+
+<h5 id="section-7">题意</h5>
+
+<p>Say you have an array for which the ith element is the price of a given stock on day i. Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times). However, you may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class Solution {
+public:
+    int maxProfit(vector&lt;int&gt;&amp; prices) {
+        if(prices.size() &lt; 2 )
+            return 0;
+        int profit = 0;
+        vector&lt;int&gt;::iterator it = prices.begin();
+        for(++it;it!=prices.end();it++){
+            int gap = *it-*(it-1);
+            if(gap &gt; 0)
+                profit += gap;
+            
+        }
+        return profit;
+        
+    }
+};
+</code></pre>
+</div>
+
+<h5 id="section-8">分析</h5>
+
+<p>贪心法。从前向后遍历数组，只要当天的价格高于前一天的价格，就算入收益。</p>
+
+<h4 id="best-time-to-buy-and-sell-stock-iii">Best Time to Buy and Sell Stock III</h4>
+
+<h5 id="section-9">题意</h5>
+
+<p>Description: Say you have an array for which the ith element is the price of a given stock on day i. Design an algorithm to find the maximum profit. You may complete at most two transactions. Note: You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class Solution {
+public:
+    int maxProfit(vector&lt;int&gt;&amp; prices) {
+        if(prices.size() &lt; 2)
+            return 0;
+        
+        int n = (int)prices.size();
+
+        vector&lt;int&gt; preProfit(n,0);
+        vector&lt;int&gt; postProfit(n,0);
+        
+        int curMin = prices[0];
+        for(int i = 1;i &lt; n;i++){
+            curMin = min(curMin,prices[i]);
+            preProfit[i] = max(preProfit[i-1],prices[i] - curMin);
+            
+        }
+        
+        int curMax = prices[n-1];
+        for(int i = n-2;i&gt;=0;i--){
+            curMax = max(curMax,prices[i]);
+            postProfit[i] = max(postProfit[i+1], curMax - prices[i]);
+        }
+        
+        int maxProfit = 0;
+        for(int i = 0; i &lt;n; i++){
+            maxProfit = max(maxProfit,postProfit[i]+preProfit[i]);
+            
+        }
+        
+        
+        return maxProfit;
+        
+    }
+};
+</code></pre>
+</div>
+
+<h5 id="section-10">分析</h5>
+
+<p>动态规划法。以第i天为分界线，计算第i天之前进行一次交易的最大收益preProfit[i]，和第i天之后进行一次交易的最大收益postProfit[i]，最后遍历一遍，max{preProfit[i] + postProfit[i]} (0≤i≤n-1)就是最大收益。第i天之前和第i天之后进行一次的最大收益求法同Best Time to Buy and Sell Stock I。<br /></p>
+
+<p><strong><em>注意：本题就是k=2时，Best Time to Buy and Sell Stock IV的情况</em></strong></p>
+
+<h3 id="best-time-to-buy-and-sell-stock-with-cooldown">Best Time to Buy and Sell Stock with Cooldown</h3>
+
+<h5 id="section-11">题意</h5>
+
+<p>Say you have an array for which the ith element is the price of a given stock on day i.<br /></p>
+
+<p>Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times) with the following restrictions:<br /></p>
+
+<p>You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
+After you sell your stock, you cannot buy stock on next day. (ie, cooldown 1 day)</p>
+
+<h5 id="example">Example:</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>prices = [1, 2, 3, 0, 2]
+maxProfit = 3
+transactions = [buy, sell, cooldown, buy, sell]
+</code></pre>
+</div>
+
+<h5 id="section-12">代码</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class Solution {
+public:
+    int maxProfit(vector&lt;int&gt;&amp; prices) {
+         if(prices.size() &lt; 2){
+            return 0;
+            
+        }
+        int curBuy = -prices[0];
+        int curSell = 0;
+        int preSell = 0;
+        int n = prices.size();
+        
+        for(int i = 1;i&lt;n;i++){
+            int temp = curSell;
+            curSell = max(curSell,curBuy + prices[i]);
+            if(i &gt; 1){
+                curBuy = max(curBuy,preSell-prices[i]);
+            }else{
+                 curBuy = max(curBuy,-prices[i]);
+            }
+            preSell = temp;
+        }
+        
+        return curSell;
+        
+    }
+};
+</code></pre>
+</div>
+
+<h5 id="section-13">分析</h5>
+
+<p>curBuy,表示在第i天买入股票所能获得的最大累积收益<br />
+curSell,表示在当天卖出股票所能获得的最大累积收益<br />
+preSell,表示在前一天卖出股票所能获得的最大累积收益<br /></p>
+
 
 
                 <hr>
@@ -315,7 +486,59 @@ globle[i][j] = max(globle[i-1][j],local[i][j]);
                     <div class="tags">
         				
                             
+                				<a href="/tags/#算法" title="算法" rel="2">
+                                    算法
+                                </a>
+                            
         				
+                            
+                				<a href="/tags/#leetcode" title="leetcode" rel="7">
+                                    leetcode
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#动态规划" title="动态规划" rel="2">
+                                    动态规划
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#c++" title="c++" rel="9">
+                                    c++
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#非递归" title="非递归" rel="4">
+                                    非递归
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#二叉树" title="二叉树" rel="4">
+                                    二叉树
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#数据结构" title="数据结构" rel="2">
+                                    数据结构
+                                </a>
                             
         				
                             
