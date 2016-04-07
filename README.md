@@ -7,5 +7,6 @@
 
 ## Thanks
 
-This theme is forked from [IronSummitMedia/startbootstrap-clean-blog-jekyll](https://github.com/IronSummitMedia/startbootstrap-clean-blog-jekyll)  
-Thanks Jekyll and Github Pages!
+This theme is forked from [https://github.com/Saberzun/saberzun.github.com.git](https://github.com/IronSummitMedia/startbootstrap-clean-blog-jekyll)  
+Thanks Jekyll and Github Pages!<br>
+Thanks [huangxuan‘s theme](https://github.com/Huxpro/huxpro.github.io)!
