@@ -217,14 +217,23 @@ public class JDBCTest {
 
 #####  测试方法的输出
 
-1. testUserInfoDao()
+* testUserInfoDao()
+
+
 > UserInfo [name=admin, password=admin, realname=wyw]
 
-2. testQueryForObject2()
+
+* testQueryForObject2()
+
+
 > 7
 
-3. testQueryForList()
-> [UserInfo [name=AA, password=123, realname=aa], UserInfo [name=admin, password=admin, realname=wyw], UserInfo [name=BB, password=123, realname=bb], UserInfo [name=CC, password=123, realname=cc], UserInfo [name=DD, password=123, realname=dd], UserInfo [name=EE, password=123, realname=ee], UserInfo [name=FF, password=123, realname=ff]]
+
+* testQueryForList()
+
+
+>
+ [UserInfo [name=AA, password=123, realname=aa], UserInfo [name=admin, password=admin, realname=wyw], UserInfo [name=BB, password=123, realname=bb], UserInfo [name=CC, password=123, realname=cc], UserInfo [name=DD, password=123, realname=dd], UserInfo [name=EE, password=123, realname=ee], UserInfo [name=FF, password=123, realname=ff]]
 
 
 
