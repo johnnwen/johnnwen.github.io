@@ -2,7 +2,7 @@
 layout:     post
 title:      "Reverse Linked List "
 subtitle:   "链表翻转 "
-date:       2016-04-12 12:00:00
+date:       2016-04-13 11:00:00
 author:     "Johnnwen"
 header-img: "img/post-bg-kb4.jpg"
 catalog:    true
