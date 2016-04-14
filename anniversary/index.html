@@ -87,7 +87,9 @@ header-img: "img/wangyw_backgrond.jpg"
         $("#copyright").css("bottom", "10px");
         document.execCommand("stop");
     } else {
-        setTimeout(null, 5000);
+        setTimeout(function () {
+            startHeartAnimation();
+        }, 1000);
 
         timeElapse(together);
         setInterval(function () {
