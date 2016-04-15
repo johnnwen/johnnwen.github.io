@@ -19,23 +19,39 @@ header-img: "img/wangyw_backgrond.jpg"
     </div>
 </header>
 
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
- 
+<style type="text/css">
+    .intro-header {
+        background-position-x: 100%;
+        background-position-y: 50%;
+        background-size: cover;
+        background-repeat-x: no-repeat;
+        background-repeat-y: no-repeat;
+        background-attachment: scroll;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: gray;
+    }
+
+    #loveHeart{
+        width:670px;
+        height:625px;
+        margin:auto;
+    }
+    #garden{
+        height: 100%;
+        width: 100%;
+    }
+</style>
 
 
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
 <link href="./css/default.css" type="text/css" rel="stylesheet">
 <script type="text/javascript" src="./js/jquery.js"></script>
 <script type="text/javascript" src="./js/garden.js"></script>
 <script type="text/javascript" src="./js/functions.js"></script>
-</head>
 
-<body>
+
 
 
 
@@ -43,86 +59,55 @@ header-img: "img/wangyw_backgrond.jpg"
     <source src="./song/love.mp3" type="audio/mpeg">
 </audio>
 
-<div id="mainDiv">
-		<div id="content">
-			<div id="code">
-				<span class="comments"><font face="楷体" size = "4">Our Love Day</font></span><br />
-				<span class="comments"><font face="楷体" size = "3">2011-5-14日，我们相恋了</font></span><br />
-				<span class="comments"><font face="楷体" size = "3">那一天就是我们的恋爱纪念日</font></span><br />
-				<br />
-				<br />
-				<span><font face="楷体" size = "3">下面送给你一首五月天的歌曲《恋爱ing》</font></span><br />
-				<br />
-				<br />
-				<span class="comments"><font face="楷体" size = "3">陪你熬夜聊天到爆肝也没关系</font></font></span><br />
-				<span class="comments"><font face="楷体" size = "3">陪你逛街逛成扁平足也没关系</font></span><br />
-				<span class="comments"><font face="楷体" size = "3">超感谢你让我重生整个orz</font></span><br />
-				<span class="comments"><font face="楷体" size = "3">恋爱ing happying</font></span><br />
-				<span class="comments"><font face="楷体" size = "3">心情就像是坐上一台喷射机</font></span><br />
-				<span class="comments"><font face="楷体" size = "3">恋爱ing 改变 ing</font></span><br />
-				<span class="comments"><font face="楷体" size = "3">改变了黄昏黎明</font></span><br />
-				<span class="comments"><font face="楷体" size = "3">有你都心跳到不行</font></span><br />
-				<span class="comments"><font face="楷体" size = "3">你是空气但是好闻胜过了空气</font></span><br />
-				<span class="comments"><font face="楷体" size = "3">你是阳光但是却能照进半夜里</font></span><br />
-				<span class="comments"><font face="楷体" size = "3">水能载舟也能煮粥喂饱了生命</font></span><br />
-				<span class="comments"><font face="楷体" size = "3">你就是维他命love</font></span><br />
-				<span class="comments"><font face="楷体" size = "3">未来某年某月某日某时某分某秒</font></span><br />
-				<span class="comments"><font face="楷体" size = "3">某人某地某种永远的心情</font></span><br />
-				<span class="comments"><font face="楷体" size = "3">不会忘记此刻love</font></span><br />
-				<span class="comments"><font face="楷体" size = "3">love!love!</font></span><br />
-				<span class="comments"><font face="楷体" size = "3">黄昏黎明整个到恋爱i n g </font></span><br />
-			</div>
-			<div id="loveHeart">
-				<canvas id="garden"></canvas>
-				<div id="words">
-					<div id="messages">
-						XingXing, I have fallen in love with you for
-						<div id="elapseClock"></div>
-					</div>
-					<div id="loveu">
-						Love u forever and ever.<br/>
-						<div class="signature">- Wen</div>
-					</div>
-				</div>
-			</div>
-		</div>
+
+
+<div id="loveHeart">
+    <canvas id="garden"></canvas>
+    <div id="words">
+        <div id="messages">
+            XingXing, I have fallen in love with you for
+            <div id="elapseClock"></div>
+        </div>
+        <div id="loveu">
+            Love u forever and ever.<br/>
+            <div class="signature">- Wen</div>
+        </div>
+    </div>
 </div>
-	<script type="text/javascript">
-		var offsetX = $("#loveHeart").width() / 2;
-		var offsetY = $("#loveHeart").height() / 2 - 23;
-		var together = new Date();
-		together.setFullYear(2011, 4, 13);
-		together.setHours(24);
-		together.setMinutes(0);
-		together.setSeconds(0);
-		together.setMilliseconds(0);
-		
-		if (!document.createElement('canvas').getContext) {
-			var msg = document.createElement("div");
-			msg.id = "errorMsg";
-			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
-			document.body.appendChild(msg);
-			$("#code").css("display", "none")
-			$("#copyright").css("position", "absolute");
-			$("#copyright").css("bottom", "10px");
-		    document.execCommand("stop");
-		} else {
-			setTimeout(function () {
-				startHeartAnimation();
-			}, 5000);
-
-			timeElapse(together);
-			setInterval(function () {
-				timeElapse(together);
-			}, 500);
-
-			adjustCodePosition();
-			$("#code").typewriter();
-		}
-	</script>
 
 
+<script type="text/javascript">
+    var offsetX = $("#loveHeart").width() / 2;
+    var offsetY = $("#loveHeart").height() / 2 - 23;
+    var together = new Date();
+    together.setFullYear(2011, 4, 13);
+    together.setHours(24);
+    together.setMinutes(0);
+    together.setSeconds(0);
+    together.setMilliseconds(0);
 
-</footer>
-</body>
-</html>
+    
+    if (!document.createElement('canvas').getContext) {
+        var msg = document.createElement("div");
+        msg.id = "errorMsg";
+        msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+        document.body.appendChild(msg);
+        $("#code").css("display", "none")
+        $("#copyright").css("position", "absolute");
+        $("#copyright").css("bottom", "10px");
+        document.execCommand("stop");
+    } else {
+        setTimeout(function () {
+            startHeartAnimation();
+        }, 1000);
+
+        timeElapse(together);
+        setInterval(function () {
+            timeElapse(together);
+        }, 500);
+
+        adjustCodePosition();
+        $("#code").typewriter();
+    }
+</script>
+
