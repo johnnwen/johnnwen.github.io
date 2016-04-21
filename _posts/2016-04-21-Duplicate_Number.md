@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "N-Queens "
-subtitle:   "Find the Duplicate Number  "
+title:      "Find the Duplicate Number "
+subtitle:   "  "
 date:       2016-04-20 11:00:00
 author:     "Johnnwen"
 header-img: "img/post-bg-kb4.jpg"
