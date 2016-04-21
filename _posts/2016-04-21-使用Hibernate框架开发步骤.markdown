@@ -23,6 +23,8 @@ tags:
 
 ##### 4. 通过HibernateAPI编写访问数据库的代码
 
+![hibernate](/img/hibernate.jpg)
+
 ### 具体实现代码
 
 ##### 1. 创建Hibernate配置文件
