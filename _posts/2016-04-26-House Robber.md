@@ -48,8 +48,10 @@ public:
 ```
 **优化时间复杂度的代码**
 
- ```
- class Solution {  
+
+```
+
+class Solution {  
 public:  
     int rob(vector<int>& nums) { 
         int n = nums.size();
@@ -64,7 +66,7 @@ public:
     }  
 };
 
- ```
+```
  
 #### 213. House Robber II 
  
