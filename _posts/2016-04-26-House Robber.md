@@ -109,7 +109,7 @@ public:
         if(n ==1)
             return nums[0];
         
-        return max(dp(nums,0,n-1),dp(nums,1,n));  
+        return  max(nums[0]+dp(nums,2,n-1),dp(nums,1,n));  
     }  
 }; 
 
@@ -131,7 +131,7 @@ public:
         if(n ==1)
             return nums[0];
         
-        return max(dp(nums,0,n-1),dp(nums,1,n));  
+        return max(nums[0]+dp(nums,2,n-1),dp(nums,1,n));  
     }  
 };*/
 
