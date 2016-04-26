@@ -83,9 +83,11 @@ Given a list of non-negative integers representing the amount of money of each h
 
 
 ##### 代码
+
  
- ```
- class Solution {  
+```
+
+class Solution {  
 public:  
     int dp(vector<int>& nums,int begin,int end) { 
         int n = end-begin;
