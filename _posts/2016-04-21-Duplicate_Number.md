@@ -2,7 +2,7 @@
 layout:     post
 title:      "Find the Duplicate Number "
 subtitle:   "  "
-date:       2016-04-20 11:00:00
+date:       2016-04-20 12:00:00
 author:     "Johnnwen"
 header-img: "img/post-bg-kb4.jpg"
 catalog:    true
@@ -15,7 +15,7 @@ tags:
 ---
 
 
-### 287. Find the Duplicate Number
+### leetcode 287. Find the Duplicate Number
 
 #### 题意
 
