@@ -1,11 +1,11 @@
 # Site settings
 title: wangyw Blog
-SEOTitle: 王有文的博客 | johnnwen Blog
+SEOTitle: 王有文的博客 | johnnwyw Blog
 header-img: img/wangyw_backgrond.jpg
 email: 13021008001@163.com
-description: "Java Android"
-keyword: "wangyouwen, 王有文, johnnwen, 王有文的博客, johnnwen Blog, 博客, 个人博客, 互联网, Java, Android"
-url: "http://johnnwen.github.io"              # your host, for absolute URL
+description: "Java Python 机器学习"
+keyword: "wangyouwen, 王有文, johnnwyw, 王有文的博客, johnnwyw Blog, 博客, 个人博客, 互联网, Java, Python, 机器学习"
+url: "http://johnnwyw.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 
@@ -14,7 +14,7 @@ baseurl: ""                             # for example, '/blog' if your blog host
 RSS: false
 weibo_username:     johnnwen
 zhihu_username:     johnnwen
-github_username:    wenlovexx
+github_username:    johnnwyw
 #twitter_username:  
 facebook_username:  johnnwen2016
 
@@ -62,13 +62,13 @@ duoshuo_share: true                     # set to false if you want to use Commen
 ba_track_id: 28d333d77e29c85b9d1b7aa5478291b1
 # Google Analytics
 ga_track_id: 'UA-76117582-1'            # Format: UA-xxxxxx-xx
-ga_domain: http://wenlovexx.github.io
+ga_domain: http://johnnwyw.github.io
 
 
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "c++ Java Android"
+sidebar-about-description: "Java Python 大数据 机器学习"
 sidebar-avatar: /img/wangyw.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -80,9 +80,9 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 
 
 # Friends
-friends: [
-    {
-        title: "遵达",
-        href: "http://saberzun.github.io"
-    }
-]
+#friends: [
+#    {
+#        title: "",
+#        href: "http:"
+#    }
+#]

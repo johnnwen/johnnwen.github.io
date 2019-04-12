@@ -1,0 +1,245 @@
+---
+layout:     post
+title:      "leetcode 349. Intersection of Two Arrays   "
+subtitle:   "  "
+date:       2016-05-25 08:00:00
+author:     "Johnnwen"
+header-img: "img/post-bg-kb4.jpg"
+catalog:    true
+tags:
+    - leetcode
+    - 数据结构
+    - c++
+  
+    
+---
+
+
+### leetcode 349. Intersection of Two Arrays 
+
+#### 题意
+
+Given two arrays, write a function to compute their intersection.
+
+**Example:**
+Given nums1 = [1, 2, 2, 1], nums2 = [2, 2], return [2].
+
+***Note:***
+
+* Each element in the result must be unique.
+* The result can be in any order.
+
+
+##### 代码
+
+###### 解法一（暴力法）
+
+```
+class Solution {
+  public:
+      vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+          vector<int> res;
+          set<int> tmp;
+          for(int i = 0; i < nums1.size(); i++)
+          {
+              for(int j = 0; j < nums2.size(); j++)
+              {
+                  if(nums1[i] == nums2[j])
+                  {
+                     tmp.insert(nums2[j]);
+                     nums2.erase(nums2.begin()+j);
+                     break;
+                   
+                  }
+             }
+             
+         }
+         set<int>::iterator it = tmp.begin();
+         
+         while(it != tmp.end()){
+             res.push_back(*it);
+             it++;
+         }
+         return res;
+     }
+ };
+ 
+```
+ 
+
+###### 解法二（map应用)
+
+
+```
+class Solution {
+public:
+    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+        
+        if(nums1.size() == 0 || nums2.size() == 0){
+            return vector<int>();
+        }
+        
+        map<int,bool> tmp;
+        vector<int> res;
+        set<int> nums;
+        
+        for(int val:nums1){
+            tmp[val] = true;
+        }
+        
+        for(int val:nums2){
+            if(tmp.count(val)&&tmp[val] == true){
+                res.push_back(val);
+                tmp[val] = false;
+            }
+        }
+        return res;
+    }
+};
+ 
+```
+
+
+
+
+###### 解法三(sort排序)
+
+```
+
+class Solution {  
+public:  
+    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {  
+        sort(nums1.begin(), nums1.end());  
+        sort(nums2.begin(), nums2.end());  
+        vector<int> res;  
+        int i = 0, j = 0;  
+        while (i < nums1.size() && j < nums2.size())  
+        {  
+            if (nums1[i] < nums2[j])  
+                i++;  
+            else if (nums1[i] > nums2[j])  
+                j++;  
+            else  
+            {
+                if (res.size() == 0 || res.back() != nums1[i])  
+                    res.push_back(nums1[i]);  
+                i++;  
+                j++;  
+            }  
+        }  
+        return res;  
+    }  
+};
+ 
+```
+
+
+
+#### 扩展 leetcode 350. Intersection of Two Arrays II
+
+##### 题意
+
+Given two arrays, write a function to compute their intersection.
+
+**Example:**
+
+Given nums1 = [1, 2, 2, 1], nums2 = [2, 2], return [2, 2].
+
+***Note:***
+
+Each element in the result should appear as many times as it shows in both arrays.
+The result can be in any order.
+
+**Follow up:**
+
+* What if the given array is already sorted? How would you optimize your algorithm?
+* What if nums1's size is small compared to num2's size? Which algorithm is better?
+* What if elements of nums2 are stored on disk, and the memory is limited such that you cannot load all elements into the memory at once?
+
+##### 代码
+
+###### 解法一（暴力法）
+
+
+```
+class Solution {
+  public:
+      vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
+          vector<int> res;
+          for(int i = 0; i < nums1.size(); i++)
+          {
+              for(int j = 0; j < nums2.size(); j++)
+              {
+                  if(nums1[i] == nums2[j])
+                  {
+                     res.push_back(nums2[j]);
+                     nums2.erase(nums2.begin()+j);
+                     break;
+                   
+                  }
+             }
+         }
+         return res;
+     }
+};
+
+```
+
+###### 解法二（排序sort）
+ 
+
+```
+class Solution {  
+public:  
+    vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {  
+        sort(nums1.begin(), nums1.end());  
+        sort(nums2.begin(), nums2.end());  
+        vector<int> res;  
+        int i = 0, j = 0;  
+        while (i < nums1.size() && j < nums2.size())  
+        {  
+            if (nums1[i] < nums2[j])  
+                i++;  
+            else if (nums1[i] > nums2[j])  
+                j++;  
+            else  
+            {
+                
+                res.push_back(nums1[i]);  
+                i++;  
+                j++;  
+            }  
+        }  
+        return res;  
+    }  
+};
+
+```
+
+
+###### 解法三（map应用）
+
+```
+class Solution {
+public:
+     vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
+         if(nums1.size()==0 || nums2.size()==0) 
+            return vector<int>();
+         vector<int> res;
+         unordered_map<int, int> tmp;
+         for(auto val: nums1) 
+            tmp[val]++;
+         for(auto val: nums2)
+         {
+             if(tmp.count(val) && tmp[val]>0) {
+                res.push_back(val);
+             }
+             tmp[val]--;
+         }
+         return res;
+     }
+};
+
+```
+
+
